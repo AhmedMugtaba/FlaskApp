@@ -1,0 +1,25 @@
+{% include 'base.html' %} 
+
+{% block items %}
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <span>Welcome To</span>
+            <a href="{{url_for('showCategory')}}"><strong>{{category.name}}</strong></a>
+            <h4><a href="{{url_for('newItem', category_id = category.id)}}">Add A New Product</a></h4>
+
+            <div>
+                
+
+                {% for i in items %}
+                <p>{{i.name}}</p>
+                {% endfor %}
+                {% for user in users %}
+                <h5>Created by {{user.name}}</h5>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 
